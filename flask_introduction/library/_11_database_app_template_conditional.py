@@ -15,6 +15,7 @@ def connect_db():
 
 @app.before_request
 def before_request():
+    print "hello Gunank"
     g.db = connect_db()
 
 
@@ -23,3 +24,8 @@ def hello_world():
     cursor = g.db.execute('SELECT id, name FROM author;')
     authors = [dict(id=row[0], name=row[1]) for row in cursor.fetchall()]
     return render_template('database/authors_with_conditional.html', authors=authors)
+
+
+@app.route('/extra')
+def extra():
+    return "Other view"

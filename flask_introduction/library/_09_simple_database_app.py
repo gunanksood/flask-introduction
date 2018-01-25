@@ -6,6 +6,7 @@ building an HTML template with it.
 Requirements:
  * A database created with some data about authors inside.
 """
+
 import sqlite3
 from flask import Flask, g, render_template
 from . import config
